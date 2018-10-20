@@ -1,0 +1,784 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Inovado</title>
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css" integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg" crossorigin="anonymous">
+	<style>
+		@font-face{
+		    font-family: Open Sans;
+		    src: url(fonts/OpenSans-Regular.ttf);
+		}
+		body{
+			margin: 0;
+			font-family: "Open Sans", sans-serif;
+		}
+		/*Contacto*/
+		.contact-bar{
+			display: flex;
+			flex-direction: row;
+			height: 40px;
+			border-bottom: solid 0.3px #EEE;
+			align-items: center;
+		}
+		.contact-bar a{
+			display: block;
+		}
+		.contact-bar .contact{
+			font-size: 13px;
+			color: #999;
+			flex-basis: 50%;
+			padding-left: 13%;
+		}
+		.contact-rrss{
+			display: flex;
+			flex-basis: 50%;
+			padding-right: 14%;
+			justify-content: flex-end;
+		}
+		.contact-tw{
+			background-image: url(http://inovado.hellominti.com/wp-content/themes/inovado/framework/images/icons/twitter.png);
+			opacity: 0.6;
+			width: 40px;
+			height: 40px;
+		}
+		.contact-tw:hover{
+			background-image: url(http://inovado.hellominti.com/wp-content/themes/inovado/framework/images/icons/twitter.png);
+			opacity: 1;
+			background-position: center bottom;
+			background-color: rgb(72,196,210);
+		}
+		.contact-db{
+			background-image: url(http://inovado.hellominti.com/wp-content/themes/inovado/framework/images/icons/dribbble.png);
+			opacity: 0.6;
+			width: 40px;
+			height: 40px;
+		}
+		.contact-db:hover{
+			background-image: url(http://inovado.hellominti.com/wp-content/themes/inovado/framework/images/icons/dribbble.png);
+			opacity: 1;
+			background-position: center bottom;
+			background-color: rgb(239, 91, 146);
+		}
+		.contact-fb{
+			background-image: url(http://inovado.hellominti.com/wp-content/themes/inovado/framework/images/icons/facebook.png);
+			opacity: 0.6;
+			width: 40px;
+			height: 40px;
+		}
+		.contact-fb:hover{
+			background-image: url(http://inovado.hellominti.com/wp-content/themes/inovado/framework/images/icons/facebook.png);
+			opacity: 1;
+			background-position: center bottom;
+			background-color: rgb(59, 89, 152);
+		}
+		.contact-gl{
+			background-image: url(http://inovado.hellominti.com/wp-content/themes/inovado/framework/images/icons/google.png);
+			opacity: 0.6;
+			width: 40px;
+			height: 40px;
+		}
+		.contact-gl:hover{
+			background-image: url(http://inovado.hellominti.com/wp-content/themes/inovado/framework/images/icons/google.png);
+			opacity: 1;
+			background-position: center bottom;
+			background-color: rgb(221, 75, 57);
+		}
+		.contact-li{
+			background-image: url(http://inovado.hellominti.com/wp-content/themes/inovado/framework/images/icons/linkedin.png);
+			opacity: 0.6;
+			width: 40px;
+			height: 40px;
+		}
+		.contact-li:hover{
+			background-image: url(http://inovado.hellominti.com/wp-content/themes/inovado/framework/images/icons/linkedin.png);
+			opacity: 1;
+			background-position: center bottom;
+			background-color: rgb(113, 178, 208);
+		}
+		.contact-yt{
+			background-image: url(http://inovado.hellominti.com/wp-content/themes/inovado/framework/images/icons/youtube.png);
+			opacity: 0.6;
+			width: 40px;
+			height: 40px;
+		}
+		.contact-yt:hover{
+			background-image: url(http://inovado.hellominti.com/wp-content/themes/inovado/framework/images/icons/youtube.png);
+			opacity: 1;
+			background-position: center bottom;
+			background-color: rgb(244, 87, 80);
+		}
+		.contact-rss{
+			background-image: url(http://inovado.hellominti.com/wp-content/themes/inovado/framework/images/icons/rss.png);
+			opacity: 0.6;
+			width: 40px;
+			height: 40px;
+		}
+		.contact-rss:hover{
+			background-image: url(http://inovado.hellominti.com/wp-content/themes/inovado/framework/images/icons/rss.png);
+			opacity: 1;
+			background-position: center bottom;
+			background-color: rgb(254, 153, 0);
+		}
+		/*NavBar*/
+		nav{
+			position: sticky;
+			display: flex;
+			height: 90px;
+			width: 100%;
+			align-items: center;
+		}
+		.logo{
+			display: flex;
+			flex-basis: 40%;
+			height: 90px;
+			justify-content: center;
+			align-items: center;
+		}
+		.nav-links{
+			display: flex;
+			flex-basis: 60%;
+			align-items: center;
+			height: 90px;
+			font-size: 13px;
+		}
+		.nav-links a{
+			display: block;
+			box-sizing: border-box;
+			text-decoration: none;
+			color: #666;
+			height: 90px;
+			margin-right: 3%;
+			line-height: 90px;
+		}
+		.nav-links a:hover{
+			border-bottom: solid 4px rgb(72,196,210);
+		}
+		.active{
+			border-bottom: solid 4px rgb(72,196,210);
+		}
+		.banner{
+			display:flex;
+			justify-content: center;
+			background-image: url(img/aa.png);
+			background-repeat: no-repeat;
+			background-position: center;
+			height: 371px;
+		}
+		.banner img{
+			width: 100%;
+			
+		}
+		.caracteristicas{
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			height: 232px;
+			color: #888;
+		}
+		.caracteristicas-columna{
+			margin-left: 2%;
+			margin-right: 2%;
+			display: flex;
+			width: 288px;
+			height: 152px;
+		}
+		.caracteristicas-columna-icon{
+			font-size: 32px;
+			flex-basis: 20%;
+			display: flex;
+			justify-content: center;
+		}
+		.caracteristicas-columna-text{
+			display: flex;
+			flex-basis: 80%;
+			flex-direction: column;
+		}
+		.caracteristicas-columna-title{
+			font-size: 16px;
+			color: #444;
+		}
+		.caracteristicas-columna-descr{
+			margin-top: 10px;
+			font-size: 13px;
+		}
+		.caracteristicas-columna-link{
+			justify-content: flex-end;
+		}
+		.caracteristicas-columna-link a{
+			font-size: 13px;
+			text-decoration: none;
+			color: #289dcc;
+		}
+		.weare{
+			background-color: #f9f9f9;
+			height: 606px;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+		}
+		.weare-title{
+			max-width: 960px;
+			display: flex;
+			flex-direction: column;
+			color: #777;
+			justify-content: center;
+			align-items: center;
+			text-align: center;
+			height: 200px;
+			border-bottom: solid 0.5px rgb(0,0,0, 0.2);
+		}
+		.weare-title h2{
+			color: #289dcc;
+		}
+		.weare-img{
+			margin-top: 5%;
+		}
+		.newsandrevolution{
+			display: flex;
+			height: 485px;
+			justify-content: center;
+			align-items: center;
+		}
+		.news{
+			display: flex;
+			flex-direction: column;
+			width: 360px;
+			height: 395px;
+			margin-right: 17px;
+		}
+		.news-title{
+			font-size: 20px;
+			border-bottom: solid 0.5px #444;
+		}
+		.new{
+			margin-top: 20px;
+			display: flex;
+			flex-direction: column;
+			font-size: 14px;
+		}
+		.new a{
+			text-decoration: none;
+			color: #289dcc;
+		}
+		.new-title{
+			font-size: 16px;
+			text-decoration: none;
+			color: #666 !important;
+			margin-bottom: 8px;
+		}
+		.new-comments{
+			font-size: 12px;
+			color: #999;
+		}
+		.revolution{
+			display: flex;
+			flex-direction: column;
+			width: 360px;
+			height: 395px;
+			margin-left: 17px;
+		}
+		.revolution-title{
+			font-size: 20px;
+			border-bottom: solid 0.5px #444;
+		}
+		.revolution-form{
+			margin-top: 25px;
+			border-radius: 5px;
+			background-color: #f2f2f2;
+			padding: 20px;
+		}
+		input[type=text], select {
+			width: 100%;
+			padding: 12px 20px;
+			margin: 8px 0;
+			display: inline-block;
+			border: 1px solid #ccc;
+			border-radius: 4px;
+			box-sizing: border-box;
+		}
+		.revolution-form-descr{
+			font-size: 13px;
+			color: #777;
+		}
+		.recent-projects{
+			display: flex;
+			flex-direction: column;
+			height: 400px;
+			background-color: #f9f9f9;
+			justify-content: center;
+			align-items: center;
+		}
+		.recent-projects-title{
+			width: 80%;
+			font-size: 20px;
+			border-bottom: solid 0.5px #999;
+		}
+		.recent-projects-gallery{
+			width: 80%;
+			display: flex;
+			flex-direction: row;
+			margin-top: 40px;
+		}
+		.projects-gallery-item{
+			display: flex;
+			flex-direction: column;
+			flex-basis: 33%;
+			margin-left: 10px;
+			margin-right: 10px;
+			box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+			background-color: #FFF;
+		}
+		.gallery-item-img{
+			max-width: 100%;
+		}
+		.gallery-item-txt{
+			display: flex;
+			box-sizing: border-box;
+			padding: 8px;
+			flex-direction: column;
+			font-size: 12px;
+			color: #999
+		}
+		.gallery-item-txt-title{
+			font-size: 14px;
+			color: #444;
+		}
+
+		.marcas{
+			height: 180px;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			box-sizing: border-box;
+		}
+		.marcas a{
+			margin-left: 2%;
+			margin-right: 2%;
+		}
+		.twitter-new{
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			background-color: #289dcc;
+			color: #FFF;
+			text-align: center;
+			height: 50px;
+		}
+		.twitter-new a{
+			text-decoration: none;
+			color: #FFF;
+			margin-left: 8px;
+			font-size: 14px
+		}
+		.footer1{
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			height: 305px;
+			background-color: #444;
+			color: #999;
+			font-size: 14px;
+			border-top: solid 10px #333;
+		}
+		.footer1 div{
+			margin-left: 1%;
+			margin-right: 1%;
+		}
+		.footer1-inovado{
+			flex-basis: 20%;
+			display: flex;
+			flex-direction: column;
+			height: 200px;
+		}
+		.footer1-inovado img{
+			max-width: 94px;
+			height: auto;
+			margin-bottom: 15px
+		}
+		.footer1-projects{
+			display: flex;
+			flex-direction: column;
+			flex-basis: 20%;
+			height: 200px;
+		}
+		.latest-projects-title{
+			color: #FFF;
+			font-size: 16px;
+			border-bottom: solid 0.5px #777;
+		}
+		.footer1-projects-gallery{
+			margin-top: 10px;
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: center;
+			align-items: center;
+		}
+		.footer1-projects-gallery a{
+			margin-left: 1%;
+			margin-right: 1%;
+		}
+		.footer1-projects-gallery-item{
+			border-style: solid;
+			border-color: #333;
+			border-width: 5px;
+			border-radius: 6px;
+		}
+		.footer1-posts{
+			display: flex;
+			flex-direction: column;
+			flex-basis: 20%;
+			height: 200px;
+		}
+		.footer1-posts-title{
+			width: 100%;
+			color: #FFF;
+			font-size: 16px;
+			border-bottom: solid 0.5px #777;
+		}
+		.footer1-posts ul{
+			padding-left: 0px;
+			display: block;
+			text-decoration: none;
+			list-style-type: none;
+		}
+		.footer1-posts ul a{
+			text-decoration: none;
+			color: #777;
+		}
+		.footer1-contact{
+			display: flex;
+			font-size: 13px;
+			flex-direction: column;
+			flex-basis: 20%;
+			height: 200px;
+		}
+		.footer1-contact-title{
+			width: 100%;
+			color: #FFF;
+			font-size: 16px;
+			border-bottom: solid 0.5px #777;
+			margin-bottom: 20px;
+		}
+		.footer1-contact a{
+			display: inline;
+			text-decoration: none;
+			color: #888;
+		}
+		.footer1-contact a:hover{
+			color: #FFF;
+		}
+		.footer2{
+			display: flex;
+			height: 50px;
+			background-color: #222;
+			justify-content: center;
+			align-items: center;
+		}
+		.footer2-text{
+			flex-basis: 50%;
+			color: #777;
+			font-size: 12px;
+			padding-left: 14%;
+		}
+		.footer2-text a{
+			text-decoration: none;
+			color: #777;
+		}
+		.footer2-text a:hover{
+			color: #FFF;
+		}
+		.footer2-rrss{
+			flex-basis: 50%;
+			display: flex;
+			flex-basis: 50%;
+			padding-right: 14%;
+			justify-content: flex-end;
+		}
+		.footer2-tw{
+			background-image: url(http://inovado.hellominti.com/wp-content/themes/inovado/framework/images/icons/twitter.png);
+			opacity: 0.6;
+			width: 40px;
+			height: 40px;
+		}
+		.footer2-tw:hover{
+			background-image: url(http://inovado.hellominti.com/wp-content/themes/inovado/framework/images/icons/twitter.png);
+			opacity: 1;
+			background-position: center bottom;
+		}
+		.footer2-db{
+			background-image: url(http://inovado.hellominti.com/wp-content/themes/inovado/framework/images/icons/dribbble.png);
+			opacity: 0.6;
+			width: 40px;
+			height: 40px;
+		}
+		.footer2-db:hover{
+			background-image: url(http://inovado.hellominti.com/wp-content/themes/inovado/framework/images/icons/dribbble.png);
+			opacity: 1;
+			background-position: center bottom;
+		}
+		.footer2-fb{
+			background-image: url(http://inovado.hellominti.com/wp-content/themes/inovado/framework/images/icons/facebook.png);
+			opacity: 0.6;
+			width: 40px;
+			height: 40px;
+		}
+		.footer2-fb:hover{
+			background-image: url(http://inovado.hellominti.com/wp-content/themes/inovado/framework/images/icons/facebook.png);
+			opacity: 1;
+			background-position: center bottom;
+		}
+		.footer2-gl{
+			background-image: url(http://inovado.hellominti.com/wp-content/themes/inovado/framework/images/icons/google.png);
+			opacity: 0.6;
+			width: 40px;
+			height: 40px;
+		}
+		.footer2-gl:hover{
+			background-image: url(http://inovado.hellominti.com/wp-content/themes/inovado/framework/images/icons/google.png);
+			opacity: 1;
+			background-position: center bottom;
+		}
+		.footer2-li{
+			background-image: url(http://inovado.hellominti.com/wp-content/themes/inovado/framework/images/icons/linkedin.png);
+			opacity: 0.6;
+			width: 40px;
+			height: 40px;
+		}
+		.footer2-li:hover{
+			background-image: url(http://inovado.hellominti.com/wp-content/themes/inovado/framework/images/icons/linkedin.png);
+			opacity: 1;
+			background-position: center bottom;
+		}
+		.footer2-yt{
+			background-image: url(http://inovado.hellominti.com/wp-content/themes/inovado/framework/images/icons/youtube.png);
+			opacity: 0.6;
+			width: 40px;
+			height: 40px;
+		}
+		.footer2-yt:hover{
+			background-image: url(http://inovado.hellominti.com/wp-content/themes/inovado/framework/images/icons/youtube.png);
+			opacity: 1;
+			background-position: center bottom;
+		}
+		.footer2-rss{
+			background-image: url(http://inovado.hellominti.com/wp-content/themes/inovado/framework/images/icons/rss.png);
+			opacity: 0.6;
+			width: 40px;
+			height: 40px;
+		}
+		.footer2-rss:hover{
+			background-image: url(http://inovado.hellominti.com/wp-content/themes/inovado/framework/images/icons/rss.png);
+			opacity: 1;
+			background-position: center bottom;
+		}
+	</style>
+</head>
+<body>
+	<div class="contact-bar">
+		<div class="contact"> Call Us: (1)118 234 678 - Mail: info@example.com </div>
+		<div class="contact-rrss">
+			<a class="contact-tw" href="http://www.twitter.com/hellominti"></a>
+			<a class="contact-db" href="http://dribbble.com/"></a>
+			<a class="contact-fb" href="http://facebook.com/"></a>
+			<a class="contact-gl" href="http://google.com/"></a>
+			<a class="contact-li" href="http://linkedin.com/"></a>
+			<a class="contact-yt" href="http://youtube.com/mintithemes"></a>
+			<a class="contact-rss" href="http://inovado.hellominti.com/feed/"></a>
+		</div>
+	</div>
+
+	<nav>
+		<div class="logo">
+			<a href="http://inovado.hellominti.com/"><img src="http://inovado.hellominti.com/wp-content/uploads/2013/03/inovado.png" /></a>
+		</div>
+		<div class="nav-links">
+			<a class="active" href="http://inovado.hellominti.com/home/">Home</a>
+			<a href="http://inovado.hellominti.com/#">Headers</a>
+			<a href="http://inovado.hellominti.com/pages/about-us/">Pages</a>
+			<a href="http://inovado.hellominti.com/portfolio/portfolio-single-column/">Portfolio</a>
+			<a href="http://inovado.hellominti.com/shortcodes/">Shortcodes</a>
+			<a href="http://inovado.hellominti.com/shop/">Shop</a>
+			<a href="http://inovado.hellominti.com/advanced-theme-options/">Features</a>
+			<a href="http://inovado.hellominti.com/blog/">Blog</a>
+			<a href=""><img src="http://inovado.hellominti.com/wp-content/themes/inovado/framework/images/cart.png" /></a>
+			<a href=""><img src="http://inovado.hellominti.com/wp-content/themes/inovado/framework/images/search.png"></a>
+		</div>
+	</nav>
+
+	<div class="banner"></div>
+
+	<div class="caracteristicas">
+		<div class="caracteristicas-columna">
+			<div class="caracteristicas-columna-icon">
+				<div class="flexible">
+					<span class="far fa-file"></span>
+				</div>
+			</div>
+			<div class="caracteristicas-columna-text">
+				<div class="caracteristicas-columna-title">Incredibly Flexible</div>
+				<div class="caracteristicas-columna-descr">
+					Asunt in anim uis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+				</div>
+				<div class="caracteristicas-columna-link"><a href="">Take a Tour →</a></div>
+			</div>
+		</div>
+		
+		<div class="caracteristicas-columna">
+			<div class="caracteristicas-columna-icon">
+				<div class="flexible">
+					<span class="far fa-hdd"></span>
+				</div>
+			</div>
+			<div class="caracteristicas-columna-text">
+				<div class="caracteristicas-columna-title">Ultra Responsive</div>
+				<div class="caracteristicas-columna-descr">
+					Asunt in anim uis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+				</div>
+				<div class="caracteristicas-columna-link"><a href="">Take a Tour →</a></div>
+			</div>
+		</div>
+		
+		<div class="caracteristicas-columna">
+			<div class="caracteristicas-columna-icon">
+				<div class="flexible">
+					<span class="far fa-comment"></span>
+				</div>
+			</div>
+			<div class="caracteristicas-columna-text">
+				<div class="caracteristicas-columna-title">Excellent Support</div>
+				<div class="caracteristicas-columna-descr">
+					Asunt in anim uis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+				</div>
+				<div class="caracteristicas-columna-link"><a href="">Take a Tour →</a></div>
+			</div>
+		</div>
+	</div>
+
+	<div class="weare">
+		<div class="weare-title">
+			<h2>We are Inovado and we hand-craft Web Solutions with Powerful Technologies.</h2>
+			Inovado is an ultra responsive, retina-ready WordPress Theme that everybody wants. It’s an incredible premium theme with powerful customization settings that helps you transform Inovado into your unique business tool.
+		</div>
+		<div class="weare-img">
+			<img src="http://inovado.hellominti.com/wp-content/uploads/2013/07/inovado_screens2.jpg" />
+		</div>
+	</div>
+
+	<div class="newsandrevolution">
+		<div class="news">
+			<div class="news-title">Latest News</div>
+			<div class="new">
+				<a class="new-title" href="">This is a Standard Post</a>
+				<div class="new-comments">7 Comments</div>
+				Praesent augue arcu, ornare ut tincidunt eu, mattis a libero. Pellentesque habitant morbi tristique senectus et netus et malesuada fames... <a href="">Read More →</a>
+			</div>
+			<div class="new">
+				<a class="new-title" href="">Post with Featured Image</a>
+				<div class="new-comments">2 Comments</div>
+				Praesent augue arcu, ornare ut tincidunt eu, mattis a libero. Pellentesque habitant morbi tristique senectus et netus et malesuada fames... <a href="">Read More →</a>
+			</div>
+		</div>
+		<div class="revolution">
+			<div class="revolution-title">Join the Revolution</div>
+			<div class="revolution-form">
+				<div class="revolution-form-descr">
+					Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna.
+				</div>
+
+				<input type="text" id="fname" name="firstname" placeholder="Your Name">
+
+				<input type="text" id="lname" name="lastname" placeholder="Your E-Mail">
+
+				<input type="submit" value="Send">
+			</div>
+		</div>
+	</div>
+
+	<div class="recent-projects">
+		<div class="recent-projects-title">Our Recent Projects</div>
+		<div class="recent-projects-gallery">
+			<div class="projects-gallery-item">
+				<img class="gallery-item-img" src="http://inovado.hellominti.com/wp-content/uploads/2013/01/photodune-2650397-sailing-m-460x300.jpg" />
+				<div class="gallery-item-txt">
+					<div class="gallery-item-txt-title">Vivamus tristique</div>
+				</div>
+			</div>
+			<div class="projects-gallery-item">
+				<img class="gallery-item-img" src="http://inovado.hellominti.com/wp-content/uploads/2013/01/photodune-369299-businessman-typing-s4-460x300.jpg" />
+				<div class="gallery-item-txt">
+					<div class="gallery-item-txt-title">Duis rhoncus odio nec</div>
+				</div>
+			</div>
+			<div class="projects-gallery-item">
+				<img class="gallery-item-img" src="http://inovado.hellominti.com/wp-content/uploads/2013/01/photodune-589744-tablet-computer-with-hand-s4-460x300.jpg" />
+				<div class="gallery-item-txt">
+					<div class="gallery-item-txt-title">In fringilla suscipit</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="marcas">
+		<a href=""><img class="marca" alt="hugenius" src="http://inovado.hellominti.com/wp-content/uploads/2013/07/logo1.png" /></a>
+		<a href=""><img class="marca" alt="zisyo" src="http://inovado.hellominti.com/wp-content/uploads/2013/07/logo2.png" /></a>
+		<a href=""><img class="marca" alt="astra" src="http://inovado.hellominti.com/wp-content/uploads/2013/07/logo3.png" /></a>
+		<a href=""><img class="marca" alt="mylook" src="http://inovado.hellominti.com/wp-content/uploads/2013/07/logo11.png" /></a>
+		<a href=""><img class="marca" alt="lastine" src="http://inovado.hellominti.com/wp-content/uploads/2013/07/logo8.png" /></a>
+	</div>
+
+	<div class="twitter-new">
+		<span class="fab fa-twitter"></span> <a href="">Did you already check out the brand new version of Inovado? It's definitely worth a look</a>
+	</div>
+
+	<div class="footer1">
+		<div class="footer1-inovado">
+			<img src="http://inovado.hellominti.com/wp-content/uploads/2013/07/logo_small.png" />
+			Aliquam fringilla, sapien egetferas scelerisque placerat, lorem libero cursus lorem, sed sodales lorem libero eu sapien. Nunc mattis feugiat justo vel faucibus. Nulla consequat feugiat malesuada.
+		</div>
+		<div class="footer1-projects">
+			<div class="latest-projects-title">Latest Projects</div>
+			<div class="footer1-projects-gallery">
+				<a href=""><img class="footer1-projects-gallery-item" src="http://inovado.hellominti.com/wp-content/uploads/2013/01/photodune-2650397-sailing-m-60x60.jpg" /></a>
+				<a href=""><img class="footer1-projects-gallery-item" src="http://inovado.hellominti.com/wp-content/uploads/2013/01/photodune-2650397-sailing-m-60x60.jpg" /></a>
+				<a href=""><img class="footer1-projects-gallery-item" src="http://inovado.hellominti.com/wp-content/uploads/2013/01/photodune-2650397-sailing-m-60x60.jpg" /></a>
+				<a href=""><img class="footer1-projects-gallery-item" src="http://inovado.hellominti.com/wp-content/uploads/2013/01/photodune-2650397-sailing-m-60x60.jpg" /></a>
+				<a href=""><img class="footer1-projects-gallery-item" src="http://inovado.hellominti.com/wp-content/uploads/2013/01/photodune-2650397-sailing-m-60x60.jpg" /></a>
+				<a href=""><img class="footer1-projects-gallery-item" src="http://inovado.hellominti.com/wp-content/uploads/2013/01/photodune-2650397-sailing-m-60x60.jpg" /></a>
+			</div>
+		</div>
+		<div class="footer1-posts">
+			<div class="footer1-posts-title">Recent Posts</div>
+			<ul>
+				<li><a href="">> This is a Standard Post</a></li>
+				<li><a href="">> Post with Featured Image</a></li>
+				<li><a href="">> Beautiful Gallery Post</a></li>
+				<li><a href="">> This is a Video Post</a></li>
+				<li><a href="">> This is an Audio Post</a></li>
+				<li><a href="">> More Premium Themes</a></li>
+			</ul>
+		</div>
+		<div class="footer1-contact">
+			<div class="footer1-contact-title">Contact Info</div>
+
+			<span>100 Mainstreet Blvd.</span>
+			<span><strong>Phone:</strong> (305) 555-4446</span>
+			<span><strong>Fax:</strong> (305) 555-4447</span>
+			<span><strong>E-Mail:</strong> <a href="">johndoe@example.com</a></span>
+			<span><strong>Web:</strong> <a href="">http://www.example.com</a></span>
+		</div>
+	</div>
+
+	<div class="footer2">
+		<div class="footer2-text">Copyright 2013 Inovado | Theme by <a href="">Mintithemes</a></div>
+		<div class="footer2-rrss">
+			<a class="footer2-tw" href="http://www.twitter.com/hellominti"></a>
+			<a class="footer2-db" href="http://dribbble.com/"></a>
+			<a class="footer2-fb" href="http://facebook.com/"></a>
+			<a class="footer2-gl" href="http://google.com/"></a>
+			<a class="footer2-li" href="http://linkedin.com/"></a>
+			<a class="footer2-yt" href="http://youtube.com/mintithemes"></a>
+			<a class="footer2-rss" href="http://inovado.hellominti.com/feed/"></a>
+		</div>
+	</div>
+</body>
+</html>
